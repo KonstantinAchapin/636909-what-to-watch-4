@@ -1,7 +1,7 @@
 # Личный проект «Что посмотреть» [![Build status][travis-image]][travis-url]
 
 * Студент: [Константин Ачапин](https://up.htmlacademy.ru/react/4/user/636909).
-* Наставник: `Неизвестно`.
+* Наставник: [Владислав Пономарев](https://htmlacademy.ru/profile/id1366303).
 
 ---
 
