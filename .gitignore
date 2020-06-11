@@ -14,3 +14,4 @@ node_modules/
 # Файлы собранного bundle
 public/bundle.js
 public/bundle.js.map
+
