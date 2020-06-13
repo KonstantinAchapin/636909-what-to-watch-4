@@ -1,7 +1,8 @@
 import React from 'react';
-import PropTypes from "prop-types";
+import PropTypes, {string} from "prop-types";
 import {SmallMovieCard} from './small-movie-card.jsx';
 
+const MOVIE_GENRES = [`Comedies`, `Crime`, `Documentary`, `Dramas`, `Horror`, `Kids & Family`, `Romance`, `Sci-Fi`, `Thrillers`];
 
 export const Main = (props) => {
   const {title, genre, releaseDate, filmsTitle} = props;
@@ -118,7 +119,7 @@ export const Main = (props) => {
         </ul>
 
         <div className="catalog__movies-list">
-          {filmsTitle.map((it, i) => <SmallMovieCard key={it + i} filmTitle={it} />)}
+          {filmsTitle.map((it, i) => <SmallMovieCard key={it + i} filmTitle={it.title} />)}
         </div>
 
         <div className="catalog__more">
@@ -142,4 +143,16 @@ export const Main = (props) => {
     </div>
   </React.Fragment>;
 };
+
+Main.propTypes = {
+  title: PropTypes.string.isRequired,
+  genre: PropTypes.oneOf(MOVIE_GENRES),
+  releaseDate: PropTypes.number.isRequired,
+  filmsTitle: PropTypes.arrayOf(
+      PropTypes.shape({
+        title: string.isRequired
+      })
+  ).isRequired
+};
+
 

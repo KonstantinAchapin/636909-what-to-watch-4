@@ -6,12 +6,13 @@ import {App} from './components/app.jsx';
 const init = () => {
   const movieOptions = {
     title: `Hotel Grand Budapest`,
-    genre: `Adventure`,
-    releaseDate: `2014`,
-    filmsTitle: [`Fantastic Beasts`, `Bohemian Rhapsody`, `Macbeth`, `Godfather`, `Inception`, `Fight Club`, `Parasite`, `Leon`]
+    genre: `Dramas`,
+    releaseDate: 2014,
   };
 
-  ReactDOM.render(<App title={movieOptions.title} genre={movieOptions.genre} releaseDate={movieOptions.releaseDate} filmsTitle={movieOptions.filmsTitle} />, document.getElementById(`root`));
+  const filmItems = [{title: `Fantastic Beasts`}, {title: `Bohemian Rhapsody`}, {title: `Macbeth`}, {title: `Fight Club`}];
+
+  ReactDOM.render(<App title={movieOptions.title} genre={movieOptions.genre} releaseDate={movieOptions.releaseDate} filmsTitle={filmItems} />, document.getElementById(`root`));
 };
 
 init();

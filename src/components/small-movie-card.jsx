@@ -16,3 +16,7 @@ export const SmallMovieCard = (props) => {
   </React.Fragment>;
 };
 
+SmallMovieCard.propTypes = {
+  filmTitle: PropTypes.string.isRequired
+};
+
