@@ -2,7 +2,6 @@ import React from 'react';
 import {SmallMovieCard} from './small-movie-card.jsx';
 
 export const Main = (props) => {
-  // eslint-disable-next-line react/prop-types
   const {title, genre, releaseDate, filmsTitle} = props;
 
   return <React.Fragment>
