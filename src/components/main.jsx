@@ -1,5 +1,7 @@
 import React from 'react';
+import PropTypes from "prop-types";
 import {SmallMovieCard} from './small-movie-card.jsx';
+
 
 export const Main = (props) => {
   const {title, genre, releaseDate, filmsTitle} = props;
