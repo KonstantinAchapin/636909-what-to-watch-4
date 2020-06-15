@@ -1,11 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {Main} from './main.jsx';
+import {MOVIE_GENRES} from './main.jsx';
 
+export const App = ({title, genre, releaseDate, filmsTitle}) => <Main title={title} genre={genre} releaseDate={releaseDate} filmsTitle={filmsTitle}/>;
 
-export const App = (props) => {
-  // eslint-disable-next-line react/prop-types
-  const {title, genre, releaseDate, filmsTitle} = props;
-  return <React.Fragment>
-    <Main title={title} genre={genre} releaseDate={releaseDate} filmsTitle={filmsTitle}/>
-  </React.Fragment>;
+App.propTypes = {
+  title: PropTypes.string.isRequired,
+  genre: PropTypes.oneOf(MOVIE_GENRES),
+  releaseDate: PropTypes.number.isRequired,
+  filmsTitle: PropTypes.arrayOf(
+      PropTypes.shape({
+        title: PropTypes.string.isRequired
+      })
+  ).isRequired
 };

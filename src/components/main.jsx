@@ -1,13 +1,11 @@
 import React from 'react';
-import PropTypes, {string} from "prop-types";
+import PropTypes from 'prop-types';
 import {SmallMovieCard} from './small-movie-card.jsx';
 
-const MOVIE_GENRES = [`Comedies`, `Crime`, `Documentary`, `Dramas`, `Horror`, `Kids & Family`, `Romance`, `Sci-Fi`, `Thrillers`];
+export const MOVIE_GENRES = [`Comedies`, `Crime`, `Documentary`, `Dramas`, `Horror`, `Kids & Family`, `Romance`, `Sci-Fi`, `Thrillers`];
 
-export const Main = (props) => {
-  const {title, genre, releaseDate, filmsTitle} = props;
-
-  return <React.Fragment>
+export const Main = ({title, genre, releaseDate, filmsTitle}) => (
+  <React.Fragment>
     <div className="visually-hidden">;
       <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"><symbol id="add" viewBox="0 0 19 20">
         <title>+</title>
@@ -119,7 +117,7 @@ export const Main = (props) => {
         </ul>
 
         <div className="catalog__movies-list">
-          {filmsTitle.map((it, i) => <SmallMovieCard key={it + i} filmTitle={it.title} />)}
+          {filmsTitle.map((film, index) => <SmallMovieCard key={film.title + index} filmTitle={film.title} />)}
         </div>
 
         <div className="catalog__more">
@@ -141,8 +139,8 @@ export const Main = (props) => {
         </div>
       </footer>
     </div>
-  </React.Fragment>;
-};
+  </React.Fragment>
+);
 
 Main.propTypes = {
   title: PropTypes.string.isRequired,
@@ -150,9 +148,7 @@ Main.propTypes = {
   releaseDate: PropTypes.number.isRequired,
   filmsTitle: PropTypes.arrayOf(
       PropTypes.shape({
-        title: string.isRequired
+        title: PropTypes.string.isRequired
       })
   ).isRequired
 };
-
-
