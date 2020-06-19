@@ -4,7 +4,7 @@ import {SmallMovieCard} from './small-movie-card.jsx';
 
 export const MOVIE_GENRES = [`Comedies`, `Crime`, `Documentary`, `Dramas`, `Horror`, `Kids & Family`, `Romance`, `Sci-Fi`, `Thrillers`];
 
-export const Main = ({title, genre, releaseDate, filmsTitle}) => (
+export const Main = ({title, genre, releaseDate, filmsTitle, titleButtonClick}) => (
   <React.Fragment>
     <div className="visually-hidden">;
       <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"><symbol id="add" viewBox="0 0 19 20">
@@ -85,7 +85,7 @@ export const Main = ({title, genre, releaseDate, filmsTitle}) => (
         <h2 className="catalog__title visually-hidden">Catalog</h2>
         <ul className="catalog__genres-list">
           <li className="catalog__genres-item catalog__genres-item--active">
-            <a href="#" className="catalog__genres-link">All genres</a>
+            <a href="#" onClick={titleButtonClick} className="catalog__genres-link">All genres</a>
           </li>
           <li className="catalog__genres-item">
             <a href="#" className="catalog__genres-link">Comedies</a>
@@ -150,5 +150,6 @@ Main.propTypes = {
       PropTypes.shape({
         title: PropTypes.string.isRequired
       })
-  ).isRequired
+  ).isRequired,
+  titleButtonClick: PropTypes.func
 };
