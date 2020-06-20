@@ -150,6 +150,6 @@ Main.propTypes = {
       PropTypes.shape({
         title: PropTypes.string.isRequired
       })
-  ).isRequired,
+  ),
   onTitleButtonClick: PropTypes.func
 };
