@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {App} from './components/app.jsx';
+import {films} from './mocks/film.js';
 
 
 const init = () => {
@@ -10,9 +11,7 @@ const init = () => {
     releaseDate: 2014,
   };
 
-  const filmItems = [{title: `Fantastic Beasts`}, {title: `Bohemian Rhapsody`}, {title: `Macbeth`}, {title: `Fight Club`}];
-
-  ReactDOM.render(<App title={movieOptions.title} genre={movieOptions.genre} releaseDate={movieOptions.releaseDate} filmsTitle={filmItems} />, document.getElementById(`root`));
+  ReactDOM.render(<App title={movieOptions.title} genre={movieOptions.genre} releaseDate={movieOptions.releaseDate} filmsTitle={films} />, document.getElementById(`root`));
 };
 
 init();
