@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {FilmsList} from './films-list.jsx';
+import {films} from '../mocks/film.js';
 
 export const MOVIE_GENRES = [`Comedies`, `Crime`, `Documentary`, `Dramas`, `Horror`, `Kids & Family`, `Romance`, `Sci-Fi`, `Thrillers`];
 
-export const Main = ({title, genre, releaseDate}) => (
+export const Main = ({title, genre, releaseDate, onTitleButtonClick}) => (
   <React.Fragment>
     <div className="visually-hidden">;
       <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"><symbol id="add" viewBox="0 0 19 20">
@@ -55,7 +56,7 @@ export const Main = ({title, genre, releaseDate}) => (
           </div>
 
           <div className="movie-card__desc">
-            <h2 className="movie-card__title">{title}</h2>
+            <h2 className="movie-card__title" onClick = {onTitleButtonClick}>{title}</h2>
             <p className="movie-card__meta">
               <span className="movie-card__genre">{genre}</span>
               <span className="movie-card__year">{releaseDate}</span>
@@ -116,7 +117,7 @@ export const Main = ({title, genre, releaseDate}) => (
           </li>
         </ul>
 
-        <FilmsList/>
+        <FilmsList films={films}/>
 
         <div className="catalog__more">
           <button className="catalog__button" type="button">Show more</button>
@@ -149,5 +150,5 @@ Main.propTypes = {
         title: PropTypes.string.isRequired
       })
   ),
-  onTitleButtonClick: PropTypes.func
+  onTitleButtonClick: PropTypes.func,
 };

@@ -21,8 +21,7 @@ describe(`SmallMovieCard`, () => {
 
     const titleButton = smallMovieCard.find(`.small-movie-card`);
     titleButton.simulate(`mouseEnter`);
-
-    expect(onMouseEnter.mock.calls.length).toBe(1);
+    expect(onMouseEnter.mock.calls[0][0]).toBe(films.title, films.img);
   });
 });
 
